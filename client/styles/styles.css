@@ -99,9 +99,9 @@ form input[type=text] {
     left:0;
     right:0;
     border:2px solid #000;
-    
+
 }
-#chats{   
+#chats{
     margin-top: 200px;
     margin-bottom: 200px;
     overflow:auto;
