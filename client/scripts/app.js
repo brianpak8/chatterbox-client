@@ -5,19 +5,31 @@ keys
 
 */
 
+
+
 var app = {
   server: 'http://parse.sfs.hackreactor.com/chatterbox/classes/messages'
 };
-
-app.init = function() {
-  this.fetch();
-
+$('document').ready(function() {
+  app.init();
+  app.fetch();
+  
+  //$('.username').on('click', app.handleUsernameClick);
   // for(var i = 0; i < text.length; i++) {
   //   console.log(this.renderMessage(text[i].data));
   // }
+});
+// app.fetch();
 
 
+app.init = function() {
+  $('.username').on('click', function() {
+    app.handleUsernameClick();
+  });
+  
+  
 };
+
 app.send = function(message) {
   $.ajax({
     url: 'http://parse.sfs.hackreactor.com/chatterbox/classes/messages',
@@ -63,10 +75,21 @@ app.clearMessages = function() {
 app.renderMessage = function(message) {
   // var $message = <
 
-  $('#chats').append("<div>" + message.username + " " + message.text + " " + message.createdAt + "</div>");
+  //`<div class = user> ${message.username} ${message.text} ${message.createAt} </div>`
+  $('#chats').append(`<div class = user> ${message.username} ${message.text} ${message.createAt} </div>`);
 
 };
 
 app.renderRoom = function(name) {
   $('#roomSelect').append("<div>name</div>");
 };
+
+app.handleUsernameClick = function() {
+  console.log('name');
+};
+
+
+
+
+
+

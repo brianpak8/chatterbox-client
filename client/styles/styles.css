@@ -87,4 +87,60 @@ form input[type=text] {
     color: #fff;
     background-color: #0090da;
 }
+/*##############################################3*/
+#chatwindow{
+    position:absolute;
+    height:400px; /* if you wish to use all of your space, use
+    position:absolute; top:0;left:0;right:0;bottom:0;
+    or drop the chatdwindow div */
+}
+#chats, #inputcontainer{
+    position:absolute;
+    left:0;
+    right:0;
+    border:2px solid #000;
+    
+}
+#chats{   
+    margin-top: 200px;
+    margin-bottom: 200px;
+    overflow:auto;
+    top:0;
+    bottom:3em;
+}
+#inputcontainer{
+    margin-bottom: 150px;
+    display:block;
+    bottom:0;
+    height:3em;
+    padding:.5em;
+    margin-top:1em;
+}
 
+#inputcontainer > p{
+    margin:0;
+}
+
+#submit {
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    float: right;
+    background-color: black;
+    margin-top: 10px;
+        resize: both;
+    overflow: auto;
+}
+
+#submit:hover {
+    border: none;
+    background:red;
+    box-shadow: 0px 0px 1px #777;
+}
