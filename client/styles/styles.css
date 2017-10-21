@@ -132,7 +132,7 @@ form input[type=text] {
     text-decoration: none;
     cursor: pointer;
     border:none;
-    float: right;
+    float: center;
     background-color: black;
     margin-top: 10px;
         resize: both;

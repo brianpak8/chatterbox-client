@@ -23,8 +23,12 @@ $('document').ready(function() {
 
 
 app.init = function() {
-  $('.username').on('click', function() {
+  $('.name').on('click', function() {
     app.handleUsernameClick();
+    alert(1);
+  });
+  $('#submit').on('click', function() {
+    app.handleSubmit();
   });
   
   
@@ -76,7 +80,7 @@ app.renderMessage = function(message) {
   // var $message = <
 
   //`<div class = user> ${message.username} ${message.text} ${message.createAt} </div>`
-  $('#chats').append(`<div class = user> ${message.username} ${message.text} ${message.createAt} </div>`);
+  $('#chats').append(`<div class = user> <span class="name">${message.username}</span>: ${message.text} ${message.createAt} </div>`);
 
 };
 
@@ -85,7 +89,27 @@ app.renderRoom = function(name) {
 };
 
 app.handleUsernameClick = function() {
-  console.log('name');
+  alert(this.username);
+};
+
+app.handleSubmit = function() {
+  app.send(message);
+  
+};
+
+var getElementsByClassName = function(className, node) {
+  node = node || document.body;
+  var result = []; 
+  var nodeNames = node.className.split(' ');
+  if ( nodeNames.includes(className) ) {
+    result.push(node);
+  }
+  var childrenOfNode = node.children; 
+  for (var i = 0; i < childrenOfNode.length; i++)  {
+    var tempChild = getElementsByClassName(className, childrenOfNode[i]);
+    result = result.concat(tempChild);
+  }
+  return result;
 };
 
 
