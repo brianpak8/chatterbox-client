@@ -115,6 +115,9 @@ form input[type=text] {
     height:3em;
     padding:.5em;
     margin-top:1em;
+    width: 50%;
+    position: fixed;
+    left: 275px;
 }
 
 #inputcontainer > p{
